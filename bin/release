@@ -3,5 +3,7 @@ cat <<EOF
 ---
 config_vars:
 PATH: $PATH:/app/vendor/unoconv
+UNOPATH: $HOME/.apt/usr/lib/libreoffice
+UNO_PATH: $HOME/.apt/usr/lib/libreoffice
 EOF
 
