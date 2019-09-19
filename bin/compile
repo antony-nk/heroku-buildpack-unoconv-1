@@ -4,4 +4,4 @@ cd $1
 mkdir -p vendor/unoconv
 curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.7/unoconv > vendor/unoconv/unoconv
 chmod 775 vendor/unoconv/unoconv
-UNOPATH="$HOME/.apt/usr/lib/libreoffice"'
+UNOPATH="$HOME/.apt/usr/lib/libreoffice"
