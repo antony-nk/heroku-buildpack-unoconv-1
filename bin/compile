@@ -4,3 +4,4 @@ cd $1
 mkdir -p vendor/unoconv
 curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.7/unoconv > vendor/unoconv/unoconv
 chmod 775 vendor/unoconv/unoconv
+echo 'export UNO_PATH="$HOME/.apt/usr/lib/libreoffice $HOME/.apt/usr/lib/libreoffice/program/pyuno.co $HOME/vendor/unoconv/unconv"' >> $PROFILE_PATH
