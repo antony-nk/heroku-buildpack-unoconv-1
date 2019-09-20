@@ -5,3 +5,13 @@ mkdir -p vendor/unoconv
 curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.7/unoconv > vendor/unoconv/unoconv
 chmod 775 vendor/unoconv/unoconv
 export UNOPATH="$HOME/.apt/usr/lib/libreoffice"
+
+# update PATH and LD_LIBRARY_PATH
+echo "-----> Updating environment variables"
+PROFILE_PATH="$BUILD_DIR/.profile.d/unoconv.sh"
+ACTUAL_INSTALL_PATH="$HOME/vendor/unoconv/unoconv"
+mkdir -p $(dirname $PROFILE_PATH)
+echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
+echo "export LD_LIBRARY_PATH=$ACTUAL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $PROFILE_PATH
+echo "export UNOCONV_CONFIGURE_PATH=$ACTUAL_INSTALL_PATH" >> $PROFILE_PATH
+echo "export UNO_PATH=$HOME/.apt/usr/lib/libreoffice" >> $PROFILE_PATH
