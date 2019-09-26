@@ -14,6 +14,6 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
 echo "export LD_LIBRARY_PATH=$ACTUAL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $PROFILE_PATH
 echo "export UNOCONV_CONFIGURE_PATH=$ACTUAL_INSTALL_PATH" >> $PROFILE_PATH
-echo "export PYTHONPATH=$HOME/.apt/usr/lib/python3/dist-packages" >> $PROFILE_PATH
-echo "export UNO_PATH=$HOME/.apt/usr/lib/libreoffice" >> $PROFILE_PATH
+echo "export PYTHONPATH=$HOME/.apt/usr/lib/python3.5" >> $PROFILE_PATH
+echo "export UNO_PATH=$HOME/.apt/usr/lib/libreoffice $HOME/.apt/usr/lib/python3.5 $HOME/.apt/usr/bin/unoconv" >> $PROFILE_PATH
 echo "export UNOPATH=$HOME/.apt/usr/lib/libreoffice" >> $PROFILE_PATH
