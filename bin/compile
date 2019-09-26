@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-echo "-----> Installing unoconv 0.7 from https://github.com/dagwieers/unoconv"
+echo "-----> Installing unoconv 0.8 from https://github.com/dagwieers/unoconv"
 cd $1
 mkdir -p vendor/unoconv
-curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.7/unoconv > vendor/unoconv/unoconv
+curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.8/unoconv > vendor/unoconv/unoconv
 chmod 775 vendor/unoconv/unoconv
 
 # update PATH and LD_LIBRARY_PATH
