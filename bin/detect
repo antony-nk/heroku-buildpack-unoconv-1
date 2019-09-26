@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-echo "unoconv 0.7"
+echo "unoconv 0.8"
 exit 0
 
