@@ -25,7 +25,8 @@ cd $APT_DIR/usr/lib/x86_64-linux-gnu/
 ln -sv mesa/libGL.so.1 .
 
 cd $APT_DIR/usr/lib/x86_64-linux-gnu
-ln -sv ../libreoffice/program/* .
+ln -sv ../libreoffice/program/*.so .
+ln -sv ../libreoffice/program/python .
 
 echo "Installing unoconv 0.8 from https://github.com/dagwieers/unoconv" | arrow
 cd $1
