@@ -29,11 +29,12 @@ ln -sv ../libreoffice/program/*.so .
 ln -sv ../libreoffice/program/*.py .
 
 echo "linking libreoffice python" | arrow
-ln -sv ../libreoffice/program/python .
+mkdir python
+ln -sv ../python3.5/* ./python
 
-echo 'GUARDO COSA CI SIA NELLA CARTELLA CORRENTE -> $PWD'
-
-ls -a -F
+cd ../libreoffice/program
+mkdir python
+ln -sv ../python3.5/* ./python
 
 echo "Installing unoconv 0.8 from https://github.com/dagwieers/unoconv" | arrow
 cd $1
