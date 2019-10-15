@@ -27,10 +27,6 @@ ln -sv mesa/libGL.so.1 .
 cd $APT_DIR/usr/lib/x86_64-linux-gnu
 ln -sv ../libreoffice/program/*.so .
 
-echo "linking libreoffice python" | arrow
-mkdir python
-ln -sv ../python3.5/* ./python
-
 cd ../libreoffice/program
 mkdir python
 ln -sv ../python3.5/* ./python
