@@ -26,7 +26,6 @@ ln -sv mesa/libGL.so.1 .
 
 cd $APT_DIR/usr/lib/x86_64-linux-gnu
 ln -sv ../libreoffice/program/*.so .
-ln -sv ../libreoffice/program/*.py .
 
 echo "linking libreoffice python" | arrow
 mkdir python
@@ -36,20 +35,16 @@ cd ../libreoffice/program
 mkdir python
 ln -sv ../python3.5/* ./python
 
-echo "Installing unoconv 0.8 from https://github.com/dagwieers/unoconv" | arrow
-cd $1
-mkdir -p vendor/unoconv
-curl -s https://raw.githubusercontent.com/dagwieers/unoconv/0.8/unoconv > vendor/unoconv/unoconv
-chmod 775 vendor/unoconv/unoconv
-
 # update PATH and LD_LIBRARY_PATH
 echo "Updating environment variables" | arrow
 PROFILE_PATH="$BUILD_DIR/.profile.d/unoconv.sh"
 ACTUAL_INSTALL_PATH="$HOME/vendor/unoconv"
 mkdir -p $(dirname $PROFILE_PATH)
-echo "export PATH=$ACTUAL_INSTALL_PATH/bin:\$PATH" >> $PROFILE_PATH
-echo "export LD_LIBRARY_PATH=$HOME/.apt/usr/lib/libreoffice" >> $PROFILE_PATH
-echo "export UNOCONV_CONFIGURE_PATH=$ACTUAL_INSTALL_PATH" >> $PROFILE_PATH
-#echo "export PYTHONPATH=$HOME/../usr/lib/python3.5" >> $PROFILE_PATH
-#echo "export PYTHONHOME=$HOME/../usr/lib/python3.5" >> $PROFILE_PATH
-echo "export UNO_PATH=$HOME/.apt/usr/lib/libreoffice/program" >> $PROFILE_PATH
+
+echo 'export UNO_PATH="$OFFICE_PATH"' >> $PROFILE_PATH
+
+echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/libreoffice/program"' >> $PROFILE_PATH
+echo 'export PYTHONPATH="/app/.apt/usr/lib/python3/dist-packages/"' >>  $PROFILE_PATH
+
+SHEBANG="#!\/usr\/bin\/python3.5"
+sed -i "1s/.*/$SHEBANG/" $APT_DIR/usr/bin/unoconv
