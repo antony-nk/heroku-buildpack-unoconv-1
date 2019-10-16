@@ -38,5 +38,5 @@ echo 'export UNO_PATH="$OFFICE_PATH"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/libreoffice/program"' >> $PROFILE_PATH
 echo 'export PYTHONPATH="/app/.apt/usr/lib/python3/dist-packages/"' >>  $PROFILE_PATH
 
-SHEBANG="#!\/usr\/bin\/python3.5"
+SHEBANG="#!\/usr\/bin\/python3.6"
 sed -i "1s/.*/$SHEBANG/" $APT_DIR/usr/bin/unoconv
