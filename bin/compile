@@ -28,4 +28,4 @@ cd $APT_DIR/usr/lib/x86_64-linux-gnu
 ln -sv ../libreoffice/program/*.so .
 
 echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/libreoffice/program"' >> $PROFILE_PATH
-echo 'export USR_BIN_PATH="$HOME/.apt/usr/lib/"' >> $PROFILE_PATH
+echo 'export USR_BIN_PATH="$HOME/.apt/usr/bin/"' >> $PROFILE_PATH
